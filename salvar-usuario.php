@@ -8,7 +8,7 @@ switch ($_REQUEST["acao"]){
 
       $sql = "INSERT INTO usuarios (nome, email, senha, data_nasc) VALUES ('{$nome}', '{$email}','{$senha}','{$data_nasc}')";
 
-$res = $conn->query($sql);
+      $res = $conn->query($sql);
       if($res==true){
          print"<script>alert('Cadastro comcluido com sucesso) </script>";
          print"<script>location.href='?page=listar'; </script>";
@@ -17,12 +17,14 @@ $res = $conn->query($sql);
          print"<script>location.href='?page=listar'; </script>";
       }
         break;  
+
+
          case 'editar':
           $nome = $_POST["nome"];
           $email = $_POST["email"];
           $senha = $_POST["senha"];
           $data_nasc = $_POST["data_nasc"];
-
+          
 
           $sql = "UPDATE usuarios SET
           nome='{$nome}',
