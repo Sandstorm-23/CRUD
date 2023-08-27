@@ -1,9 +1,10 @@
 <?php 
-define('HOST', 'localhost');
-define('USER', 'root');
-define('PASS', '');
-define('BASE','CRUD');
+$host = "localhost";
+$user = "root";
+$pass = "";
+$dbname = "crud";
 
 
-$conn = new MySQLi(HOST,USER,PASS,BASE);
+
+$conn = new PDO("mysql:host=$host;dbname="  .  $dbname, $user, $pass);
 ?>

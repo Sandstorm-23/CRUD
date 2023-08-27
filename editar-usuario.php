@@ -7,28 +7,11 @@
 </head>
 <body>
     <h1>Editar usuário</h1>
-
-
-
-
-
-
-
-    <?php
-echo()
-
-//    var_dump($_REQUEST['id']);
-//   $sql = "SELECT * FROM usuarios WHERE  id = $_REQUEST['id']";
-
-
-//    $res = $conn->query($sql);
-//    $row = $res->fetch_object();
+<?php
+    $sql = "SELECT * FROM usuarios WHERE id =".$_REQUEST["id"];
+    $res = $conn->query($sql);
+$row = $res->fetch_object();
 ?>
-
-
-
-
-
     <form action = "?page=salvar" method="POST">
         <input type="hidden" name ="acao" value = "cadastrar">
         <div class = "mb-3" >

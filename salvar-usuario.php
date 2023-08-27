@@ -3,12 +3,19 @@ switch ($_REQUEST["acao"]){
     case 'cadastrar':
       $nome = $_POST["nome"];
       $email = $_POST["email"];
-      $senha = $_POST["senha"];
-      $data_nasc = $_POST["data_nasc"];
+      $data1 = date("d/m/Y H:i:s");
+      $tipo = $_POST["tipo"];
+      $manifesto = $_POST["manifesto"];
+      $telefone = $_POST["tel"];
+  
 
-      $sql = "INSERT INTO usuarios (nome, email, senha, data_nasc) VALUES ('{$nome}', '{$email}','{$senha}','{$data_nasc}')";
+      $sql = "INSERT INTO usuarios (nome, email, telefone) VALUES ('{$nome}', '{$email}','{$telefone}')";
 
-      $res = $conn->query($sql);
+      $abc = "INSERT INTO manifestos (tipo, data1, manifesto) VALUES ('{$tipo}', '{$data1}','{$manifesto}')";
+      
+
+$res = $conn->query($sql);
+$res = $conn->query($abc);
       if($res==true){
          print"<script>alert('Cadastro comcluido com sucesso) </script>";
          print"<script>location.href='?page=listar'; </script>";
@@ -17,14 +24,12 @@ switch ($_REQUEST["acao"]){
          print"<script>location.href='?page=listar'; </script>";
       }
         break;  
-
-
          case 'editar':
           $nome = $_POST["nome"];
           $email = $_POST["email"];
           $senha = $_POST["senha"];
           $data_nasc = $_POST["data_nasc"];
-          
+
 
           $sql = "UPDATE usuarios SET
           nome='{$nome}',

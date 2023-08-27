@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1> listar usuario</h1>
+    <h1> listar manifestos</h1>
 
     <?php 
     $sql = "SELECT * FROM usuarios";
@@ -47,5 +47,6 @@ print"<p class='alert alert-danger'> Não encontrou resultados! </p>";
     }
     
     ?>
+    
 </body>
 </html>
